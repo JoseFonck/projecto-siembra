@@ -15,33 +15,45 @@
     <h1>Crear Cuenta</h1>
     <form class="form">
       <label>Nombre</label>
-      <div class="input_container">
-        <input class="input" type="text">
+      <div id="container_name" class="input_container">
+        <input id="name_input" class="input" type="text">
       </div>
-      <label>Apellido</label>
-      <div class="input_container">
-        <input class="input" type="text">
+        <span class="error_message_name"></span>
+        <label>Apellido</label>
+      <div id="container_lastname" class="input_container">
+        <input id="lastname_input" class="input" type="text">
       </div>
+      <span class="error_message_lastname"></span>
       <label>Piso y depto (Ej: 2C)</label>
-      <div class="input_container">
-        <input class="input" type="text">
+      <div id="container_depto" class="input_container">
+        <input id="depto_input"class="input" type="text">
       </div>
+      <span class="error_message_depto"></span>
       <label>Email</label>
-      <div class="input_container">
-        <input class="input" type="text">
+      <div id="container_email" class="input_container">
+        <input id="email_input" class="input" type="text">
       </div>
+      <span class="error_message_email"></span>
+      
       <label>Contraseña</label>
-      <div class="input_container">
-        <input class="input" type="text">
+      <div id="container_pass" class="input_container">
+        <input id="pass_input" class="input" type="password">
       </div>
+      <span class="error_message_pass"></span>
+      
       <label>Repetir contraseña</label>
-      <div class="input_container">
-        <input class="input" type="text">
+      <div id="container_repeatPass" class="input_container">
+        <input id="repeatPass_input" class="input" type="password">
       </div>
+      <span class="error_message_repeatpass"></span>
 
       <input class="button" type="submit" value="Registrarme">
     </form>
     <a class="a" href="/login.html">Ya tengo cuenta</a>
   </div>
+
+  <!-- <script src="/login.js"></script> -->
+  <script src="/users.js"></script>
+  <script src="/createAcount.js"></script>
 </body>
 </html>

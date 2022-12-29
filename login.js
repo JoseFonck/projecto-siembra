@@ -1,17 +1,15 @@
-const users = [
-  {
-    email: "jose@piola.com",
-    password: "12345678"
-  },
-  {
-    email: "lucas@piola.com",
-    password: "12345687"
-  },
-];
+
+
+
+const usuarios = getUsers()
 
 // inputs
 const email = document.querySelector("#email_input");
-const pass = document.querySelector("#pass_input");
+const password = document.querySelector("#pass_input");
+
+// const submitCuenta = document.querySelector("")
+
+// console.log(email.value)
 
 // inputs containers
 const emailContainer = document.querySelector("#container_email");
@@ -24,11 +22,15 @@ const messageErrorPass = document.querySelector(".error_message_pass")
 //submit button
 const button = document.querySelector(".button");
 
+
+
+
+
 button.addEventListener('click', e => {
   // console.log(email.value)
   e.preventDefault();
   const emailValue = email.value
-  const passValue = pass.value
+  const passValue = password.value
 
   let hasError = false
 
@@ -46,7 +48,6 @@ button.addEventListener('click', e => {
     // return;
   }
   
-  console.log(passValue)
 
   if (!passValue) {
     passContainer.classList.add("input_error")
@@ -55,16 +56,20 @@ button.addEventListener('click', e => {
     // return;
   }
   
-  const userLogged = users.find( user => user.email === emailValue);
-  
+  const userLogged = usuarios.find( user => user.email === emailValue);
+
   if (!userLogged) {
-    emailContainer.classList.add("input_error")
-    passContainer.classList.add("input_error")
-    hasError = true
-    // return;
+    console.error("No existis")
   }
   
-  if (userLogged && userLogged.password !== passValue) {
+  // if (!userLogged.email === emailValue) {
+  //   emailContainer.classList.add("input_error")
+  //   passContainer.classList.add("input_error")
+  //   hasError = true
+  //   // return;
+  // }
+  
+  if (userLogged.password !== passValue) {
     passContainer.classList.add("input_error")
     messageErrorPass.innerHTML = "Contraseña incorrecta"
     hasError = true
@@ -72,6 +77,8 @@ button.addEventListener('click', e => {
   }
 
   if (hasError) return
+
+  localStorage.setItem("userLogged", JSON.stringify(userLogged))
 
   window.location.href = "home.html"
 });
@@ -88,7 +95,7 @@ email.addEventListener('focus', () => {
   removeErrors()
 })
 
-pass.addEventListener('focus', () => {
+password.addEventListener('focus', () => {
   passContainer.classList.remove("input_error")
   removeErrors()
 })

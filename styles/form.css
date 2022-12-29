@@ -15,7 +15,8 @@
 }
 
 h1 {
-  margin: -40px auto 0 auto;
+  /* margin: -40px auto 0 auto; */
+  margin: auto;
 }
 
 .img {
@@ -121,4 +122,9 @@ span {
 
 .input_error{
   border-bottom: 1px solid red;
+}
+
+
+.profile{
+  display: flex;
 }
