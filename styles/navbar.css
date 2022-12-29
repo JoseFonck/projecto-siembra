@@ -1,18 +1,16 @@
-* {
-  font-family: "roboto";
-}
+
 
 .nav{
-  position: fixed;
+  position: absolute;
   /* background-color: #88d3ab; */
   background-color: #60d697;
   /* background: linear-gradient( #60d697, #6be9a5, #6be9a5, #202020); */
   box-shadow: -5px 0 10px rgb(35, 34, 34);
-  width: 310px;
+  /* width: 310px; */
   height: 100vh;
   top: 0; 
   z-index: 1000;
-  left: -310px;
+  left: 0;
   transition: left .5s;
 }
 
