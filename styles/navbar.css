@@ -6,7 +6,7 @@
   background-color: #60d697;
   /* background: linear-gradient( #60d697, #6be9a5, #6be9a5, #202020); */
   box-shadow: -5px 0 10px rgb(35, 34, 34);
-  /* width: 310px; */
+  width: 250px;
   height: 100vh;
   top: 0; 
   z-index: 1000;
@@ -16,7 +16,7 @@
 
 .wizard {
   position: fixed;
-  display: none;
+  /* display: none; */
   width: 100vw;
   height: 100vh;
   /* background-color: rgba(136, 133, 133, 0.442); */
@@ -40,6 +40,8 @@
   height: 60px;
   border-radius: 50%;
   margin-bottom: 10px;
+  cursor: pointer;
+
 }
 
 .profile_container > a{
@@ -74,6 +76,7 @@ li {
   display: flex;
   align-items: center;
   font-size: 15px;
+  cursor: pointer;
   /* border-bottom: 1px solid #ccc; */
 }
 
@@ -90,5 +93,6 @@ li {
   padding: 8px 30px;
   font-size: 18px;
 }
+
 
 

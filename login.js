@@ -36,14 +36,14 @@ button.addEventListener('click', e => {
 
   if (!emailValue) {
     emailContainer.classList.add("input_error")
-    messageErrorMail.innerHTML = "Ingrese el email"
+    messageErrorMail.textContent = "Ingrese el email"
     hasError = true
     // return;
   }
   
   if (emailValue && (!emailValue.includes("@") || !emailValue.includes(".com"))) {
     emailContainer.classList.add("input_error")
-    messageErrorMail.innerHTML = "Formato invalido"
+    messageErrorMail.textContent = "Formato invalido"
     hasError = true
     // return;
   }
@@ -51,7 +51,7 @@ button.addEventListener('click', e => {
 
   if (!passValue) {
     passContainer.classList.add("input_error")
-    messageErrorPass.innerHTML = "Ingrese contraseña"
+    messageErrorPass.textContent = "Ingrese contraseña"
     hasError = true
     // return;
   }
@@ -59,15 +59,9 @@ button.addEventListener('click', e => {
   const userLogged = usuarios.find( user => user.email === emailValue);
 
   if (!userLogged) {
-    console.error("No existis")
+    emailContainer.classList.add("input_error");
+    messageErrorMail.textContent = "Email ingresado no esta registrado";
   }
-  
-  // if (!userLogged.email === emailValue) {
-  //   emailContainer.classList.add("input_error")
-  //   passContainer.classList.add("input_error")
-  //   hasError = true
-  //   // return;
-  // }
   
   if (userLogged.password !== passValue) {
     passContainer.classList.add("input_error")
@@ -85,8 +79,8 @@ button.addEventListener('click', e => {
 
 
 const removeErrors = () => {
-  messageErrorMail.innerHTML = ""
-  messageErrorPass.innerHTML = ""
+  messageErrorMail.textContent = ""
+  messageErrorPass.textContent = ""
 };
 
 

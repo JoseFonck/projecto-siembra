@@ -98,6 +98,7 @@ const validaCampos = () => {
     
     saveUser(nuevo)
     // cargar(nuevo);
+    return error;
   }
 };
 
@@ -107,7 +108,9 @@ const button = document.querySelector(".button");
 button.addEventListener("click", (e) => {
   e.preventDefault();
   error = validaCampos(); 
-
+  if(error == false){
+    window.location.href = 'login.html'
+  }
 });
 
 const cargar = (nuevo) => {
