@@ -21,6 +21,7 @@ header{
 button{
   background-color: transparent;
   border: none;
+  margin-left: -5px;
 }
 
 button > img {

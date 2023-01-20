@@ -1,5 +1,10 @@
 const container = document.querySelector(".data_container");
 
+const fullname = document.querySelector(".fullname");
+
+const back = document.querySelector(".back");
+
+
 var userLogged = getUserLogged(); //lo pasa a array
 
 console.log(userLogged)
@@ -19,11 +24,13 @@ apellido = userLogged.apellido[0].toUpperCase() + userLogged.apellido.slice(1);
 depart = userLogged.depto[0].toUpperCase() + userLogged.depto.slice(1);
 correo = userLogged.email[0].toUpperCase() + userLogged.email.slice(1);
 
+fullname.textContent = `${namee} ${apellido}`
 
-nombre.innerText = `Nombre: ${namee}.`;
-ape.innerText = `Apellido: ${apellido}.`;
+
 depto.innerText = `Departamento: ${depart}.`;
 email.innerText = `Email: ${correo}.`;
 
-
+back.addEventListener("click", ()=>{
+    location.href = "home.html";
+})
 
