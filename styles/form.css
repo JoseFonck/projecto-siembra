@@ -37,7 +37,7 @@ h1 {
   align-items: center;
   margin-bottom: 15px;
   border-bottom: 0px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 .input_container > svg {
@@ -89,7 +89,7 @@ h1 {
   font-size: 15px;
   letter-spacing: 1px;
   background-color: rgb(147, 188, 160);
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 a {

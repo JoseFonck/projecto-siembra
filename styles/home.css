@@ -1,41 +1,7 @@
 
 
 
-header{
-  background-color: #60d697;
-  z-index: 10;
-  height: 60px;
-  display: flex;
-  width: 100%;
-  /* max-width: 320px;
-  min-width: 300px; */
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 18px;
-  position: fixed;
-  top: 0;
-  border-bottom: 1px solid rgba(12, 12, 12, 0.353);
-  box-shadow: 0 -10px 10px 10px rgba(0, 0, 0, 0.618);
-}
 
-button{
-  background-color: transparent;
-  border: none;
-  margin-left: -5px;
-}
-
-button > img {
-  background-color: transparent;
-  width: 30px;
-  height: 30px;
-}
-
-header > h1{
-  font-size: 19px;
-  font-weight: 500;
-  text-align: center;
-  background-color: transparent;
-}
 
 .container-mod{
   position: relative;

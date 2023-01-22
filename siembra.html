@@ -2,10 +2,16 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/profile.css">
-    <!-- <link rel="stylesheet" href="styles/home.css"> -->
+    <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/siembra.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva</title>
@@ -15,11 +21,106 @@
         <button class="back">
             <i class="gg-arrow-left"></i>
         </button>
-        <h1>Reserva</h1>
+        <h1>Reserva - Siembra</h1>
         <button>
             <img width="20px" src="assets/notificaciones.png" alt="">
         </button>
     </header>
+    
+    <div class="container_siembra">
+        <h1 class="indicacion">Seleccione la familia, el modulo y cultivo que desea reservar:</h1>
+        <div class="wizard"></div>
+        
+        <h2>Familia: Frutas</h2>
+        
+            <nav>
+
+                <a class="a" href="">Modulos</a>
+                
+                <ul class="ul">
+                    <li>Modulo 1</li>
+                    <div class="divisor"></div>
+                    <li>Modulo 2</li>
+                    <div class="divisor"></div>
+                    <li>Modulo 3</li>
+                    <div class="divisor"></div>
+                    <li>Modulo 4</li>
+                    <div class="divisor"></div>
+                    <li>Modulo 5</li>
+                    <div class="divisor"></div>
+                    <li>Modulo 6</li>
+                    <div class="divisor"></div>
+                    <li>Modulo 7</li>
+                    <div class="divisor"></div>
+                    <li>Modulo 8</li>
+                    <div class="divisor"></div>
+                    <li>Modulo 9</li>
+                    <div class="divisor"></div>
+                </ul>
+            
+            </nav>
+            
+            <nav>
+                <a class="button_cultivo" href="">Cultivos</a>
+                
+                <ul id="cultivos" class="ul">
+                    <div class="cultivo">
+                        <h3>Frutilla</h3>
+                        <div class="descripcion">
+                            <img class="image" src="/assets/cultivos/frutilla.jpg" alt="">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
+                        </div>
+                    </div>
+                    <div class="divisor"></div>
+                    <div class="cultivo">
+                        <h3>Tomate</h3>
+                        <div class="descripcion">
+                            <img class="image" src="/assets/cultivos/tomate.jpg" alt="">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
+                        </div>
+                    </div>
+                    <div class="divisor"></div>
+                    <div class="cultivo">
+                        <h3>Papa</h3>
+                        <div class="descripcion">
+                            <img class="image" src="/assets/cultivos/papa.jpg" alt="">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
+                        </div>
+                    </div>
+                    <div class="divisor"></div>
+                    <div class="cultivo">
+                        <h3>Papa</h3>
+                        <div class="descripcion">
+                            <img class="image" src="/assets/cultivos/papa.jpg" alt="">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
+                        </div>
+                    </div>
+                    <div class="divisor"></div>
+                    <div class="cultivo">
+                        <h3>Papa</h3>
+                        <div class="descripcion">
+                            <img class="image" src="/assets/cultivos/papa.jpg" alt="">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
+                        </div>
+                    </div>
+                    <div class="divisor"></div>
+                    <div class="cultivo">
+                        <h3>Papa</h3>
+                        <div class="descripcion">
+                            <img class="image" src="/assets/cultivos/papa.jpg" alt="">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+
+            <div class="containerButtons botones">
+                <button>Reservar</button>
+                <button>Cancelar</button>
+        </div>
+    </div>
+
+
 
     <script src="siembra.js"></script>
 </body>

@@ -1,44 +1,135 @@
-* {
-    margin: 0;
-    padding: 0;
+*{
     box-sizing: border-box;
-    overflow-y: scroll;
-    font-family: "roboto";
-    color: #000;
-  }
+}
 
-  header{
-    background-color: #60d697;
-    z-index: 10;
-    height: 60px;
+
+.container_siembra{
     display: flex;
-    width: 100%;
-    /* max-width: 320px;
-    min-width: 300px; */
-    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #60d697;
     align-items: center;
-    padding: 0 18px;
-    position: fixed;
-    top: 0;
-    border-bottom: 1px solid rgba(12, 12, 12, 0.353);
-    box-shadow: 0 -10px 10px 10px rgba(0, 0, 0, 0.618);
-  }
-  button{
-    background-color: transparent;
-    border: none;
-    margin-left: -5px;
-  }
+}
 
-  button > img {
-    background-color: transparent;
-    width: 30px;
-    height: 30px;
-    margin: auto;
-  }
+.indicacion{
+    margin-top: 80px;
+    font-size: 15px;
+    /* padding: 5px; */
+    width: 310px;
+    height: 70px;
+}
 
-  header > h1{
-    font-size: 19px;
-    font-weight: 500;
+h2{
+    /* margin-top: 10px; */
     text-align: center;
-    background-color: transparent;
+}
+
+nav{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.wizard {
+    position: fixed;
+    /* display: none; */
+    width: 100vw;
+    height: 100vh;
+    /* background-color: rgba(136, 133, 133, 0.442); */
+    z-index: 10;
+    top: 0;
+    /* transition: all; */
+    /* transform: scale(0); */
   }
+
+.a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    width: 300px;
+    border: none;
+    padding: 8px;
+    margin-top: 20px;
+    font-size: 23px;
+    letter-spacing: 1px;
+    background-color: rgba(131, 131, 131, 0.418);
+    
+}
+
+.ul{
+    background-color: #00000098;
+    text-align: center;
+    width: 300px;
+    /* display: none; */
+    position: relative;
+    /* margin-top: 48px; */
+    z-index: 100; 
+}
+
+li{
+    padding: 5px 0;
+    color: #fff;
+}
+
+
+.divisor{
+    width: 80%;
+    margin: auto;
+    height: 1px;
+    background-color: rgb(105, 105, 105);
+}
+
+
+.button_cultivo{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    width: 300px;
+    border: none;
+    margin-top: 20px;
+    font-size: 23px;
+    letter-spacing: 1px;
+    background-color: rgba(131, 131, 131, 0.418);
+    /* background-color: rgb(147, 188, 160); */
+    padding: 8px;
+}
+
+
+
+#cultivos{
+    padding: 10px;
+    height: 350px;
+}
+
+#cultivos h3{
+    font-size: 23px;
+    color: rgb(255, 255, 255);
+    padding: 5px 0;
+}
+
+
+.descripcion{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+p{  
+    display: block;
+    font-size: 14px;
+    color: rgb(224, 224, 224);
+    flex-shrink: 50;
+}
+
+.image{
+    padding: 5px;
+    border-radius: 10px;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 1;
+}
+
+.botones button{
+    margin: 0 5px;
+}
+
