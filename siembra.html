@@ -22,39 +22,49 @@
             <i class="gg-arrow-left"></i>
         </button>
         <h1>Reserva - Siembra</h1>
-        <button>
-            <img width="20px" src="assets/notificaciones.png" alt="">
+        <button >
+            <img class="help__img" width="20px" src="assets/help-outline_119052.ico" alt="">
         </button>
     </header>
+
+    <div class="help__reserva">
+        <p>Un modulo es la forma de llamar a la parcela donde se va a plantar su cultivo. Para realizar una reserva, debe:</p>
+        <ul>
+            <li>1) Seleccionar modulo</li>
+            <li>2) Seleccionar el cultivo</li>
+            <li>3) Dar en reservar</li>
+        </ul>
+        <p>Presione afuera del recuadro de ayuda para salir</p>
+    </div>
     
     <div class="container_siembra">
         <h1 class="indicacion">Seleccione la familia, el modulo y cultivo que desea reservar:</h1>
         <div class="wizard"></div>
         
-        <h2>Familia: Frutas</h2>
+        <h2>Familia: Tuberculos</h2>
         
             <nav>
-
-                <a class="a" href="">Modulos</a>
+                <a class="mod" href="">Modulos</a>
+                <!-- <img class="flecha__derecha" src="assets/flechas/flecha-derecha.png" alt=""> -->
                 
                 <ul class="ul">
-                    <li>Modulo 1</li>
+                    <li class="li">Modulo 1</li>
                     <div class="divisor"></div>
-                    <li>Modulo 2</li>
+                    <li class="li">Modulo 2</li>
                     <div class="divisor"></div>
-                    <li>Modulo 3</li>
+                    <li class="li">Modulo 3</li>
                     <div class="divisor"></div>
-                    <li>Modulo 4</li>
+                    <li class="li">Modulo 4</li>
                     <div class="divisor"></div>
-                    <li>Modulo 5</li>
+                    <li class="li">Modulo 5</li>
                     <div class="divisor"></div>
-                    <li>Modulo 6</li>
+                    <li class="li">Modulo 6</li>
                     <div class="divisor"></div>
-                    <li>Modulo 7</li>
+                    <li class="li">Modulo 7</li>
                     <div class="divisor"></div>
-                    <li>Modulo 8</li>
+                    <li class="li">Modulo 8</li>
                     <div class="divisor"></div>
-                    <li>Modulo 9</li>
+                    <li class="li">Modulo 9</li>
                     <div class="divisor"></div>
                 </ul>
             
@@ -65,34 +75,29 @@
                 
                 <ul id="cultivos" class="ul">
                     <div class="cultivo">
-                        <h3>Frutilla</h3>
+                        <h3>Zanahoria</h3>
                         <div class="descripcion">
-                            <img class="image" src="/assets/cultivos/frutilla.jpg" alt="">
+                            <img class="image" src="/assets/cultivos/tuberculos/zanahoria.jpg" alt="">
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
+                            <input class="check" type="checkbox">
                         </div>
                     </div>
                     <div class="divisor"></div>
                     <div class="cultivo">
-                        <h3>Tomate</h3>
+                        <h3>Remolacha</h3>
                         <div class="descripcion">
-                            <img class="image" src="/assets/cultivos/tomate.jpg" alt="">
+                            <img class="image" src="/assets/cultivos/tuberculos/remolacha.jpg" alt="">
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
+                            <input class="check"  type="checkbox">
                         </div>
                     </div>
                     <div class="divisor"></div>
                     <div class="cultivo">
-                        <h3>Papa</h3>
+                        <h3>Batata</h3>
                         <div class="descripcion">
-                            <img class="image" src="/assets/cultivos/papa.jpg" alt="">
+                            <img class="image" src="/assets/cultivos/tuberculos/batata.jpeg" alt="">
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
-                        </div>
-                    </div>
-                    <div class="divisor"></div>
-                    <div class="cultivo">
-                        <h3>Papa</h3>
-                        <div class="descripcion">
-                            <img class="image" src="/assets/cultivos/papa.jpg" alt="">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
+                            <input class="check"  type="checkbox">
                         </div>
                     </div>
                     <div class="divisor"></div>
@@ -101,16 +106,13 @@
                         <div class="descripcion">
                             <img class="image" src="/assets/cultivos/papa.jpg" alt="">
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
+                            <div class="container__check">
+                                <input class="check"  type="checkbox">
+                            </div>
                         </div>
                     </div>
                     <div class="divisor"></div>
-                    <div class="cultivo">
-                        <h3>Papa</h3>
-                        <div class="descripcion">
-                            <img class="image" src="/assets/cultivos/papa.jpg" alt="">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
-                        </div>
-                    </div>
+                    
                 </ul>
             </nav>
 
@@ -121,8 +123,8 @@
     </div>
 
 
-
     <script src="siembra.js"></script>
+    <script src="header.js"></script>
 </body>
 
 </html>

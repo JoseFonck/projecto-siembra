@@ -2,7 +2,7 @@ const container = document.querySelector(".data_container");
 
 const fullname = document.querySelector(".fullname");
 
-const back = document.querySelector(".back");
+
 
 
 var userLogged = getUserLogged(); //lo pasa a array

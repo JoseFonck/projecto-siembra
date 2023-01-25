@@ -30,4 +30,4 @@ document.querySelector(".cerrarSesion").addEventListener("click",()=>{
   window.location.href = "login.html";
 });
 
-
+getPath(location.pathname)

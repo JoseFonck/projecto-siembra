@@ -11,6 +11,47 @@
     align-items: center;
 }
 
+.help__reserva{
+    position: fixed;
+    margin-top: 30%;
+    width: 80%;
+    margin-left: calc(100% - 324px);
+    height: 500px;
+    padding: 20px;
+    background-color: #32665b;
+    display: none;
+    z-index: 20;
+    
+    
+}
+
+.help__reserva p{
+    font-size: 20px;
+    /* margin-bottom: 20px; */
+    color: rgb(255, 255, 255);
+    box-shadow: #00000098;
+    
+}
+
+.help__reserva ul{
+    text-align: center;
+}
+
+.help__reserva li{
+    padding: 20px 0;
+    font-size: 20px;
+    color: #7cd660;
+}
+
+p:last-child{
+    margin-top: 0px;
+}
+
+
+
+
+
+
 .indicacion{
     margin-top: 80px;
     font-size: 15px;
@@ -31,6 +72,11 @@ nav{
 
 }
 
+nav  img{
+    width: 20px;
+    height: 20px;
+}
+
 .wizard {
     position: fixed;
     /* display: none; */
@@ -43,7 +89,10 @@ nav{
     /* transform: scale(0); */
   }
 
-.a{
+
+
+
+.mod{
     display: block;
     text-align: center;
     text-decoration: none;
@@ -54,7 +103,6 @@ nav{
     font-size: 23px;
     letter-spacing: 1px;
     background-color: rgba(131, 131, 131, 0.418);
-    
 }
 
 .ul{
@@ -98,27 +146,28 @@ li{
 
 
 #cultivos{
-    padding: 10px;
-    height: 350px;
+    height: 300px;
+    
 }
 
 #cultivos h3{
     font-size: 23px;
     color: rgb(255, 255, 255);
-    padding: 5px 0;
+    margin-top: 15px;
 }
 
 
 .descripcion{
     display: flex;
-    margin-bottom: 10px;
+    margin: 10px;
+    align-items: center;
 }
 
 p{  
     display: block;
     font-size: 14px;
     color: rgb(224, 224, 224);
-    flex-shrink: 50;
+    flex-shrink: 10;
 }
 
 .image{
@@ -133,3 +182,25 @@ p{
     margin: 0 5px;
 }
 
+/* .container__check{
+    width: 20px;
+    height: 20px;
+} */
+
+.check{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    /* margin-left: 10px; */
+    background-color: #314d46;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.check:checked{
+    background-color: #2eb96f;
+    border: 1px solid rgb(253, 253, 253);
+    transition: all 0.3s ease-in-out;
+    visibility: visible;
+}
