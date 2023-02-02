@@ -30,8 +30,8 @@
     <div class="help__reserva">
         <p>Un modulo es la forma de llamar a la parcela donde se va a plantar su cultivo. Para realizar una reserva, debe:</p>
         <ul>
-            <li>1) Seleccionar modulo</li>
-            <li>2) Seleccionar el cultivo</li>
+            <li>1) Seleccionar un modulo</li>
+            <li>2) Seleccionar un o mas cultivo</li>
             <li>3) Dar en reservar</li>
         </ul>
         <p>Presione afuera del recuadro de ayuda para salir</p>
@@ -69,7 +69,7 @@
                 </ul>
             
             </nav>
-            
+
             <nav>
                 <a class="button_cultivo" href="">Cultivos</a>
                 
@@ -79,7 +79,7 @@
                         <div class="descripcion">
                             <img class="image" src="/assets/cultivos/tuberculos/zanahoria.jpg" alt="">
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
-                            <input class="check" type="checkbox">
+                            <input class="check"  type="checkbox" name="mycheck">
                         </div>
                     </div>
                     <div class="divisor"></div>
@@ -88,7 +88,7 @@
                         <div class="descripcion">
                             <img class="image" src="/assets/cultivos/tuberculos/remolacha.jpg" alt="">
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
-                            <input class="check"  type="checkbox">
+                            <input class="check"  type="checkbox" name="mycheck">
                         </div>
                     </div>
                     <div class="divisor"></div>
@@ -97,7 +97,7 @@
                         <div class="descripcion">
                             <img class="image" src="/assets/cultivos/tuberculos/batata.jpeg" alt="">
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
-                            <input class="check"  type="checkbox">
+                            <input class="check"  type="checkbox" name="mycheck">
                         </div>
                     </div>
                     <div class="divisor"></div>
@@ -106,25 +106,25 @@
                         <div class="descripcion">
                             <img class="image" src="/assets/cultivos/papa.jpg" alt="">
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, hic consequuntur! Sit dolores adipisci numquam.</p>
-                            <div class="container__check">
-                                <input class="check"  type="checkbox">
-                            </div>
+                            <input class="check"  type="checkbox" name="mycheck">
                         </div>
                     </div>
                     <div class="divisor"></div>
-                    
                 </ul>
+                <div class="cultivos__seleccionados">
+
+                </div>
             </nav>
 
             <div class="containerButtons botones">
-                <button>Reservar</button>
-                <button>Cancelar</button>
+                <button id="submit">Reservar</button>
+                <button id="cancel">Cancelar</button>
         </div>
     </div>
 
 
+    <script src="reservas.js"></script>
     <script src="siembra.js"></script>
-    <script src="header.js"></script>
 </body>
 
 </html>

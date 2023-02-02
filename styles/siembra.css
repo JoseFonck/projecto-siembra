@@ -1,7 +1,10 @@
-*{
+*,*:after,*:before{
     box-sizing: border-box;
 }
 
+html{
+    box-sizing: inherit;
+}
 
 .container_siembra{
     display: flex;
@@ -90,7 +93,39 @@ nav  img{
   }
 
 
+.select__modulo{
+    margin-top: 20px;
+    display: block;
+    width: 300px;
+    text-align: center;
+    border: none;
+    background-color: rgba(131, 131, 131, 0.418);
+    font-size: 23px;
+    padding: 8px;
+    max-width: 300px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
 
+.op{
+    display: inline;
+    appearance: none;
+    background-color: #314d46;
+    font-size: 20px;
+    /* width: 300px; */
+    /* max-width: 300px; */
+}
+
+select{
+    width: 200px;
+}
+select::-ms-expand {
+    display: none;
+  }
 
 .mod{
     display: block;
@@ -191,7 +226,6 @@ p{
     appearance: none;
     width: 20px;
     height: 20px;
-    /* margin-left: 10px; */
     background-color: #314d46;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 2px;
@@ -203,4 +237,26 @@ p{
     border: 1px solid rgb(253, 253, 253);
     transition: all 0.3s ease-in-out;
     visibility: visible;
+} 
+
+.cultivos__seleccionados{
+    /* text-align: center; */
+    /* height: 50px; */
+    /* background-color: #fff; */
+    background-color: #00000098;
+}
+
+.container__cultivo{
+    display: flex;
+    padding: 15px;
+    /* align-items: center; */
+}
+
+.container__cultivo h3{
+   
+    color: #fff;
+    ;
+}
+.container__cultivo img{
+    margin-left: auto;
 }

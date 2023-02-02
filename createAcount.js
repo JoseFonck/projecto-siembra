@@ -113,9 +113,9 @@ button.addEventListener("click", (e) => {
   }
 });
 
-const cargar = (nuevo) => {
-    localStorage.setItem("users",JSON.stringify(nuevo));
-}
+// const cargar = (nuevo) => {
+//     localStorage.setItem("users",JSON.stringify(nuevo));
+// }
 
 const validaFalla = (input, msg) => {
   const container_input = input.parentElement;
