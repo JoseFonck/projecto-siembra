@@ -128,12 +128,6 @@ button_cultivo.addEventListener("click", () => {
 });
 // }
 
-// const cargarReserva = () => {
-//   return {
-//     modulo: mod.textContent,
-//     cultivos: cultivos__seleccionados,
-//   };
-// };
 
 const button__reserva = document.getElementById("submit");
 
@@ -147,3 +141,5 @@ button__reserva.addEventListener("click", () => {
   // localStorage.setItem("reservas__cultivos",JSON.stringify(reserva));
   history.back();
 });
+
+
