@@ -6,6 +6,8 @@ html{
     box-sizing: inherit;
 }
 
+
+
 .container_siembra{
     display: flex;
     flex-direction: column;
@@ -14,26 +16,62 @@ html{
     align-items: center;
 }
 
+.confirmacion{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: calc(50vw - 150px);
+    margin-top: calc(55vh - 150px);
+    
+    background-color: #9ff3b4;
+    width: 300px;
+    z-index: 20;
+    padding: 20px 10px;
+    
+    display: none;
+    text-align: center;
+   
+}
+
+.confirmacion h3{
+    color: #000000;
+    font-size: 25px;
+    padding: 10px;
+}
+
+.confirmacion > div > button{
+    width: 50px;
+    padding: 10px 15px;
+    margin: 0 15px;
+    font-size: 18px;
+    background-color:  rgb(147, 188, 160);
+
+}
+
+
 .help__reserva{
     position: fixed;
     margin-top: 30%;
     width: 80%;
     margin-left: calc(100% - 324px);
-    height: 500px;
+    height: 550px;
     padding: 20px;
-    background-color: #32665b;
+    background-color: #9ff3b4;
+    /* background-color: #32665b; */
     display: none;
     z-index: 20;
-    
-    
+    transition: all .5s;
 }
+
 
 .help__reserva p{
     font-size: 20px;
-    /* margin-bottom: 20px; */
-    color: rgb(255, 255, 255);
+    text-align: center;
+    color: rgb(0, 0, 0);
     box-shadow: #00000098;
-    
+    font-weight: 700;
 }
 
 .help__reserva ul{
@@ -41,13 +79,17 @@ html{
 }
 
 .help__reserva li{
-    padding: 20px 0;
+    padding: 15px 0;
     font-size: 20px;
-    color: #7cd660;
+    color: #e9281a;
+    text-align: left;
+    margin: 10px 0;
+    font-weight: 700;
 }
 
 p:last-child{
-    margin-top: 0px;
+    margin-top: 5px;
+    color: #314d46;
 }
 
 
@@ -93,7 +135,7 @@ nav  img{
   }
 
 
-.select__modulo{
+/* .select__modulo{
     margin-top: 20px;
     display: block;
     width: 300px;
@@ -109,7 +151,7 @@ nav  img{
     background-repeat: no-repeat, repeat;
     background-position: right .7em top 50%, 0 0;
     background-size: .65em auto, 100%;
-}
+} */
 
 .op{
     display: inline;
@@ -253,9 +295,8 @@ p{
 }
 
 .container__cultivo h3{
-   
+  
     color: #fff;
-    ;
 }
 .container__cultivo img{
     margin-left: auto;

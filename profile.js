@@ -17,7 +17,7 @@ const nombre = document.querySelector(".nombre");
 const ape = document.querySelector(".apellido");
 const depto = document.querySelector(".depto");
 const email = document.querySelector(".email");
-
+const back = document.querySelector(".back")
 
 namee = userLogged.nombre[0].toUpperCase() + userLogged.nombre.slice(1);
 apellido = userLogged.apellido[0].toUpperCase() + userLogged.apellido.slice(1);
@@ -31,6 +31,6 @@ depto.innerText = `Departamento: ${depart}.`;
 email.innerText = `Email: ${correo}.`;
 
 back.addEventListener("click", ()=>{
-    location.href = "home.html";
+    history.back();
 })
 
