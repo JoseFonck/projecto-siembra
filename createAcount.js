@@ -93,7 +93,8 @@ const validaCampos = () => {
       apellido: valor_lastname,
       depto: valor_depto,
       email: valor_email,
-      password: valor_pass
+      password: valor_pass,
+      rol: valor_rol
     }
     
     saveUser(nuevo)
