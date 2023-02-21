@@ -1,0 +1,120 @@
+.login_container, .register_container{
+  height: 100vh;
+  background-color: rgb(92, 223, 142);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  width: 80%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 25px;
+  margin: 20px 20px;
+}
+
+.img {
+  width: 150px;
+  height: 150px;
+  margin: 20px auto 0 auto;
+}
+
+.form{
+  display: grid;
+  padding: 10px;
+}
+.form > label{
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.input_container {
+  width: 100%;
+  background-color: red;
+  background-color: rgba(57, 62, 54, 0.151);
+  height: 25px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 0px;
+  /* border-radius: 5px; */
+}
+
+.input_container > svg {
+  margin-right: 10px;
+  background-color: red;
+  width: 25px;
+  height: 25px;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: #3333;
+  cursor: pointer;
+}
+
+.input_container > svg:hover {
+  background-color: #3337;
+}
+
+
+.hidden_password{
+  display: none;
+}
+
+.input {
+  color: rgba(14, 13, 13, 0.908);
+  height: 100%;
+  flex: 1;
+  padding-left: 3px;
+  border: none;
+  background-color: transparent;
+  border-bottom: none;
+  font-size: 15px;
+  letter-spacing: 1px;
+  
+}
+
+.input:focus {
+  /* padding: 9px; */
+  outline: none;
+}
+
+.input_container:focus-within {
+  border-bottom: 2px solid rgb(51, 79, 37);
+}
+
+.button {
+  border: none;
+  margin-top: 12px;
+  padding: 5px 11px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  background-color: rgb(147, 188, 160);
+  /* border-radius: 5px; */
+}
+
+a {
+  text-align: center;
+  text-decoration: none;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+span {
+  position: relative;
+  top: -15px;
+  font-size: 13px;
+  color: #bb0000;
+}
+
+/* .a {
+  margin-top: -10px;
+} */
+
+.input_error{
+  border-bottom: 1px solid red;
+}
+
+
+.profile{
+  display: flex;
+}

@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  font-family: "roboto";
+  color: #000;
+}
+
+body {
+  background-color: #202020;
+}
+
+header{
+  background-color: #60d697;
+  z-index: 10;
+  height: 60px;
+  display: flex;
+  width: 100%;
+  /* max-width: 320px;
+  min-width: 300px; */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18px;
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid rgba(12, 12, 12, 0.353);
+  box-shadow: 0 -10px 10px 10px rgba(0, 0, 0, 0.618);
+}
+
+button{
+  background-color: transparent;
+  border: none;
+  margin-left: -5px;
+}
+
+button > img {
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+}
+
+#button__notificacion:after {
+  content: '2';
+  font-size: 10px;
+  text-align: center;
+  background-color: red;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #fff;
+}
+
+
+header  h1{
+  font-size: 19px;
+  font-weight: 500;
+  text-align: center;
+  background-color: transparent;
+}
+
+.gg-arrow-left {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 40px;
+  height: 40px;
+  margin: auto;
+}
+.gg-arrow-left::after,
+.gg-arrow-left::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  left: 12px;
+  justify-content: center;
+}
+.gg-arrow-left::after {
+  width: 15px;
+  height: 15px;
+  border-bottom: 3px solid;
+  border-left: 3px solid;
+  transform: rotate(45deg);
+  bottom: 13px;
+}
+.gg-arrow-left::before {
+  width: 20px;
+  height: 3px;
+  bottom: 19px;
+  background: currentColor
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: auto;
+  background-color: rgb(92, 223, 142);
+}
+
+.home{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo{
+  width: 300px;
+  height: 300px;
+  animation: fadeIn 2s;
+}
+
+.home > h1{
+  font-family: 'roboto';
+  font-weight: 700;
+  margin-top: 30px;
+  font-size: 70px;
+  animation: fadeIn 2s;
+}
+
+
+
+
+@keyframes fadeIn {
+  0% { 
+    opacity: 0;
+    transform: scale(.8);
+  }
+
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
