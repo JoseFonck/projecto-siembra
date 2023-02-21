@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles/home.css">
   <link rel="stylesheet" href="styles/navbar.css">
   <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/profile.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -20,15 +21,27 @@
             <img class="menuButton" width="20px" src="assets/menu.png" alt="">
         </button>
             <h1>Mis módulos</h1>
-        <button>
-            <img width="20px" src="assets/notificaciones.png" alt=""> 
+        <button id="button__notificacion">
+            <img  width="20px" src="assets/notificaciones.png" alt=""> 
         </button>
     </header>
     <div class="wizard"></div>
-    
-        <nav class="nav">
+    <div class="container_modal"></div>
+    <div class="notificacion">
+      <h3>En 10 dias comenzará el período de siembra de la familia: 
+        <strong> Tuberculos. </strong>
+        <br>
+        <br>¿Desea reservar un módulo?
+      </h3>
+      <div>
+        <button id="button__si">Si</button>
+        <button id="button__no">No</button>
+      </div>
+    </div>
 
-            <div class="profile_container">
+    <nav class="nav">
+
+            <div class="profile__container">
                 <img src="assets/pngegg.png" alt=""> 
                 <a href="profile.html" class="title">Mi perfil</a>         
             </div>
@@ -84,5 +97,6 @@
   <script src="reservas.js"></script>
   <script src="navbar.js"></script>
   <script src="home.js"></script>
+  <!-- <script src="home__modulo.js"> </script> -->
 </body>
 </html>

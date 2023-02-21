@@ -1,6 +1,7 @@
 
 .profile_container{
-    background-color: #60d697;
+    /* background-color: #60d697; */
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -32,6 +33,12 @@
 .data_container{
     padding: 50px 40px;
     text-align: left;
+}
+
+.data_container p{
+    font-weight: 600;
+    padding: 5px 0;
+    font-size: 18px;
 }
 
 .containerButtons{

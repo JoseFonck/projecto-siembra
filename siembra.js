@@ -91,14 +91,12 @@ const checkChange = (id) => {
 };
 
 let mod = document.querySelector(".mod");
-
 // desplega los li
 mod.addEventListener("click", (e) => {
   e.preventDefault();
   modulos.style.display = "block";
   wizard.style.display = "block";
   const li = document.querySelectorAll(".li");
-
   asignarModulo(li);
 });
 
@@ -149,6 +147,7 @@ function asignarModulo(items) {
         else mod__existe = false;
         console.log(mod__existe)
       });
+      mod__existe = reservas.some( r => r.modulo === modulo ) 
       if (mod !== "Modulos") {
         modulos.style.display = "none";
         wizard.style.display = "none";
@@ -157,70 +156,11 @@ function asignarModulo(items) {
   });
 }
 
-<<<<<<< Updated upstream
-console.log(cultivos.children);
-for (let i = 0; i < cultivos.children.length; i++) {
-  if (cultivos.children[i].className === "divisor") continue;
-
-  const checkbox = cultivos.children[i].lastElementChild.lastElementChild;
-  checkbox.addEventListener("change", (e) => {
-    if (e.target.checked) {
-      const cultivo = cultivos.children[i].firstElementChild.textContent; //OBTIENE NOMBRE DEL CULTIVO SELECCIONADO
-
-      cultivos__seleccionados.push(cultivo); // GUARDO ARRAY CON NOMBRES DE LOS CULTIVOS SELECCIONADOS
-      console.log(cultivos__seleccionados);
-    } else {
-      cultivos__seleccionados = cultivos__seleccionados.filter(
-        (cultivo) =>
-          cultivo !== cultivos.children[i].firstElementChild.textContent
-      ); // BORRO LOS NOMBRES DE LOS CULTIVOS QUE DESELECCIONO
-      //   console.log(cultivos__seleccionados);
-    }
-  });
-}
-
-=======
-// let array__cultivos = [];
-
-// for (let i = 0; i < cultivos.children.length; i++) {
-//   if (cultivos.children[i].className === "divisor") {
-
-//   } else {
-//     array__cultivos.push({
-//       nombre: cultivos.children[i].firstElementChild.textContent,
-//       descripcion: cultivos.children[i].lastElementChild.textContent.trim(),
-//       image: cultivos.children[i].lastElementChild.firstElementChild.src,
-//     });
-//   }
-// }
-
-// for (let i = 0; i < cultivos.children.length; i++) {
-//   if (cultivos.children[i].className === "divisor") continue;
-//   else {
-//     const checkbox = cultivos.children[i].lastElementChild.lastElementChild;
-//     // console.log(array__cultivos);
-//     checkbox.addEventListener("change", (e) => {
-//       e.preventDefault();
-//       if (e.target.checked) {
-//         cultivos__seleccionados.push(array__cultivos[i]); // GUARDO el objeto seleccionado
-//         console.log(cultivos__seleccionados);
-//       } else {
-//         cultivos__seleccionados = cultivos__seleccionados.filter(
-//           (cultivo) => cultivo !== cultivos__seleccionados[i]
-//         ); // BORRO LOS CULTIVOS QUE DESELECCIONO
-//         console.log(cultivos__seleccionados);
-//       }
-//     });
-//   }
-// }
-// console.log(cultivos__seleccionados);
->>>>>>> Stashed changes
 button_cultivo.addEventListener("click", () => {
-  // const mostrarCultivosSeleccionados = (cultivos) => {
   let array_cultivosHTML = "";
   for (let i = 0; i < cultivos__seleccionados.length; i++) {
     let new__cultivoHTML = `<div class="container__cultivo">
-                              <h3 class="text__cultivo">${cultivos__seleccionados[i]}</h3>
+                              <h3 class="text__cultivo">${cultivos__seleccionados[i].nombre}</h3>
                               <img src="assets/borrar.png" alt="">
                             </div>`;
     array_cultivosHTML += new__cultivoHTML;
@@ -229,7 +169,17 @@ button_cultivo.addEventListener("click", () => {
 });
 
 button__back.addEventListener("click", () => {
-  if (mod__existe === true &&  mod.textContent!== "Modulos" && cultivos__seleccionados.length !== 0){
+  if (mod__existe){
+    message__error.innerHTML = `<h3>El modulo ya se encuentra en uso</h3>`
+    wizard.style.display = "block";
+    message__error.style.display = "block";
+    setTimeout(() => {
+      wizard.style.display = "none";
+      message__error.style.display = "none";
+    }, 1000);
+  }else if(mod.textContent === "Modulos" || cultivos__seleccionados.length === 0){
+    message__error.innerHTML =
+      `<h3>Debe seleccionar un modulo y al menos un cultivo</h3>`;
     wizard.style.display = "block";
     message__error.style.display = "block";
     setTimeout(() => {
@@ -243,28 +193,18 @@ button__back.addEventListener("click", () => {
       cultivos: cultivos__seleccionados,
       estado: "Pendiente de confirmacion",
     });
+    history.back();
   }
-  // history.back();
 });
 
-<<<<<<< Updated upstream
-const button__confirmar = document.getElementById("aceptar");
-const button__cancelar = document.getElementById("cancelar");
-=======
 
 //VALIDACION DE RESERVA
->>>>>>> Stashed changes
 
 button__reserva.addEventListener("click", () => {
   confirmacion.style.display = "block";
   wizard.style.display = "block";
-  wizard.style.background = "#00000067";
 });
 
-<<<<<<< Updated upstream
-button__confirmar.addEventListener("click", () => {
-  if (mod.textContent !== "Modulos" && cultivos__seleccionados.length !== 0) {
-=======
 button__si.addEventListener("click", (e) => {
   e.preventDefault();
   if (mod__existe) {
@@ -282,7 +222,7 @@ button__si.addEventListener("click", (e) => {
   ) {
     confirmacion.style.display = "none";
     message__error.innerHTML =
-      "Debe seleccionar un modulo y al menos un cultivo";
+      `<h3>Debe seleccionar un modulo y al menos un cultivo</h3>`;
     message__error.style.display = "block";
     wizard.style.display = "block";
     setTimeout(() => {
@@ -290,7 +230,6 @@ button__si.addEventListener("click", (e) => {
       wizard.style.display = "none";
     }, 1500);
   } else {
->>>>>>> Stashed changes
     saveReservas({
       modulo: mod.textContent,
       cultivos: cultivos__seleccionados,
@@ -300,23 +239,11 @@ button__si.addEventListener("click", (e) => {
   }
 });
 
-<<<<<<< Updated upstream
-=======
-// button__si.addEventListener("click", (e) => {
-//   e.preventDefault();
-
-//   if (mod__existe === true) {
-//     confirmacion.style.display = "none";
-//     message__error.style.display = "block";
-//     message__error.innerHTML = `<h3>El ${mod__existe} ya esta en uso</h3>`;
-//     setTimeout(() => {
-//       message__error.style.display = "none";
-//       wizard.style.display = "none";
-//     }, 1500);
-//   }
-// });
-
->>>>>>> Stashed changes
 button_cancelar.addEventListener("click", () => {
   history.back();
+});
+
+button__no.addEventListener("click", () => {
+  confirmacion.style.display = "none";
+  wizard.style.display = "none";
 });

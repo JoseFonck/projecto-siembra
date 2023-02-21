@@ -30,7 +30,8 @@ fullname.textContent = `${namee} ${apellido}`
 depto.innerText = `Departamento: ${depart}.`;
 email.innerText = `Email: ${correo}.`;
 
+
 back.addEventListener("click", ()=>{
-    history.back();
+    location.href = "/home.html"
 })
 

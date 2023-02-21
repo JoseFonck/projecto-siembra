@@ -5,215 +5,234 @@ const container__buttonAdd = document.querySelector(".container__buttonAdd");
 const button_add = document.querySelector(".button_add");
 
 let reservas = getReservas();
-
 //Quita msg de que no existen modulos si se carga un modulo en reservas
-if(reservas.length === 0) container__mod.firstElementChild.textContent = "No hay módulos asignados";
-else container__mod.firstElementChild.textContent = ""; 
+if (reservas.length === 0)
+  container__mod.firstElementChild.textContent = "No hay módulos asignados";
+else container__mod.firstElementChild.textContent = "";
+
+const modulos = [];
 
 //Agg modulos del array de reserva
 reservas.forEach((reserva) => {
   const module = document.createElement("div");
-//   console.log(module)
+
   module.className = "module";
   module.innerHTML = `<div><h3>${reserva.modulo}</h3>
-    <span>Cultivos: <br> ${reserva.cultivos}</span></div>
-    <strong>${reserva.estado}</strong>`;
+    <span>Cultivos: <br>${reserva.cultivos
+      .map((c) => c.nombre)
+      .join(", ")}</span></div> 
+    <strong>${reserva.estado}</strong>`; //map, mapea con la condicion dada y dev un nuevo array. JOIN une los elementos
   fragmento.appendChild(module);
+  modulos.push(module);
 });
-
 //Agrega el fragmento con los modulos ANTES del conteiner del button
-container__mod.insertBefore(fragmento,container__buttonAdd);
-      
+container__mod.insertBefore(fragmento, container__buttonAdd);
+
 //Redirecciona al slide de reserva/siembra
 button_add.addEventListener("click", () => {
   location.href = "siembra.html";
 });
 
-const notificacion = document.querySelector(".notificacion");
-const button__si__reserva = document.querySelector("#button__si");
-const button__no__reserva = document.querySelector("#button__no");
 
-// console.log(notificacion)
-let ban = JSON.parse(localStorage.getItem("notificacion"));
+// PARA NOTIFICACIONES
 
-if (!ban) {
-  setTimeout(() => {
-    notificacion.style.display = "block";
-  }, 2000);
-  localStorage.setItem("notificacion", true);
-}
+                    // const notificacion = document.querySelector(".notificacion");
+                    // const button__si__reserva = document.querySelector("#button__si");
+                    // const button__no__reserva = document.querySelector("#button__no");
 
-button__si__reserva.addEventListener("click", (e) => {
-  e.preventDefault();
-  location.href = "/siembra.html";
-  notificacion.style.display = "none";
-});
+                    // console.log(notificacion)
+                    // let ban = JSON.parse(localStorage.getItem("notificacion"));
 
-button__no__reserva.addEventListener("click", (e) => {
-  e.preventDefault();
-  notificacion.style.display = "none";
-});
+                    // if (!ban) {
+                    //   setTimeout(() => {
+                    //     notificacion.style.display = "block";
+                    //   }, 2000);
+                    //   localStorage.setItem("notificacion", true);
+                    // }
+
+// button__si__reserva.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   location.href = "/siembra.html";
+//   notificacion.style.display = "none";
+// });
+
+// button__no__reserva.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   notificacion.style.display = "none";
+// });
 
 modulos.forEach((mod) => {
   mod.addEventListener("click", (e) => {
-    let id__mod =
-      e.currentTarget.firstElementChild.firstElementChild.textContent;
-    console.log(id__mod);
+    let id__mod = e.currentTarget.firstElementChild.firstElementChild.textContent;
+
     reservas.forEach((reserva) => {
-      let len = reserva.cultivos.length.toString();
-      console.log(len)
       if (
         id__mod === reserva.modulo &&
         reserva.estado === "Pendiente de siembra"
-      )
-      { (len === "1")  ? modalInfo1Culti(reserva, modal) : modalInfo2Culti(reserva, modal);
-      }
+    ) modalPendienteSiembra(reserva, modal);
+
       if (
         id__mod === reserva.modulo &&
         reserva.estado === "Pendiente de confirmacion"
-      )
-      { (len === "1")  ? modalCompleta1Culti(reserva, modal) : modalCompleta2Culti(reserva, modal);
-      }
-
-      // else modalSiembra(reserva);
+      ) modalConfirmacionSiembra(reserva, modal)
+      else if (id__mod === reserva.modulo && reserva.estado === "Sembrado") modalSembrado(reserva,modal);
     })
   });
 });
+
+//NOTIFICACION SIEMBRA FAMILIA
+const button__notificacion = document.querySelector("#button__notificacion");
+
+
+button__notificacion.addEventListener("click" , () =>{
+  location.href = "/notificaciones.html"
+})
+
 
 //MOSTRAR MODALES
 
 const modal = document.querySelector(".container_modal");
 const boton_modal = modal.lastElementChild;
 
-function modalCompleta1Culti(res,modal) {
-  modal.innerHTML = `<div class="container__img__modal">
-                          <img src="${res.cultivos[0].image}" alt="">
-                    </div>
-                    <div class="descripcion_modal">
-                          <h3>${res.modulo}</h3>
-                          <h3>Familia: Tuberculos</h3>
-                          <h3>Cultivos: ${res.cultivos.map((c) => c.nombre).join("/")}</h3>
-                          <h3>Temperatura Actual: 20C</h3>
-                          <h3>Humedad Actual: 60%</h3>
-                          <h3>Descripcion: ${res.descripcion}</h3>
-                    </div>
-                    <div class="containerButtons">
-                          <button>Reservar</button>
-                          <button>Cancelar</button>
-                    </div>`;        
-      
-modal.style.display = "block";
-modal.lastElementChild.firstElementChild.addEventListener("click", () => {
-modal.style.display = "none";
-});
-modal.lastElementChild.lastElementChild.addEventListener("click", () => {
-  deleteReserva(reservas,res)
-})
-// .addEventListener("click", deleteReserva(res))
 
-}
-
-function deleteReserva(reservas,res){
+function deleteReserva(res) {
   console.log(reservas)
   console.log(res.modulo)
   console.log(reservas.forEach((r) => r.modulo === res.modulo))
 }
 
-
-function modalCompleta2Culti(res,modal) {
-  modal.innerHTML = `<div class="container__img__modal">
-                          <img src="${res.cultivos[0].image}" alt="">
-                          <img src="${res.cultivos[1].image}" alt="">
-                    </div>
+function modalConfirmacionSiembra(res, modal) {
+  modal.innerHTML = `
                     <div class="descripcion_modal">
-                          <h3>${res.modulo}</h3>
-                          <h3>Familia: Tuberculos</h3>
-                          <h3>Cultivos: ${res.cultivos.map((c) => c.nombre).join("/")}</h3>
-                          <h3>Temperatura Actual: 20C</h3>
-                          <h3>Humedad Actual: 60%</h3>
-                          <h3>Descripcion: ${res.descripcion}</h3>
+
+                          <h2>${res.modulo}</h2>
+
+                          <span><b>Familia:</b> Tuberculos</span>
+
+                          <span><b>Cultivos:</b></span>
+                          ${res.cultivos.map(c => `
+                              <h4>${c.nombre}</h4>
+                              <div class="div__cultivo">
+                                  <img class="img__modal" src=${c.image}>
+                                  <p>${c.descripcion}</p>
+                              </div>
+                              `).join(' ')
+
+    }
+                          <span><b>Temperatura Actual:</b> 20C</span>
+                          <span><b>Humedad Actual:</b> 60%</span>
+
                     </div>
                     <div class="containerButtons">
-                          <button>Reservar</button>
-                          <button>Cancelar</button>
-                    </div>`;       
-console.log(res.cultivos.map((c) => c.image))        
-modal.style.display = "block";
-modal.lastElementChild.firstElementChild.addEventListener("click", () => {
-modal.style.display = "none";
-});
-modal.lastElementChild.lastElementChild.addEventListener("click", () => {
-  deleteReserva(reservas,res)
-})
-}
-
-function modalSiembra(r) {
-  // modal.innerHTML = `<div class="container__img__modal">
-  //                             <img src="/assets/cultivos/tuberculos/zanahoria.jpg" alt="">
-  //                   </div>
-  //                   <div class="descripcion_modal">
-  //                             <h3>Nro de modulo: 1</h3>
-  //                             <h3>Familia: Tuberculos</h3>
-  //                             <h3>Cultivos: Zanahoria</h3>
-  //                             <h3>Temperatura Actual: 20C</h3>
-  //                             <h3>Humedad Actual: 60%</h3>
-  //                             <h3>Descripcion: Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nihil officia dicta voluptatem natus. Officiis adipisci qui impedit facilis magni, delectus harum nulla? Sint cupiditate sunt asperiores velit dicta deserunt!</h3>
-  //                   </div>
-  //                   <div class="containerButtons">
-  //                             <button>Aceptar</button>
-
-  //                 </div>`;
-  console.log("Esta pendiente de siembra");
-}
-
-function modalInfo1Culti(res,modal){
-    console.log(res)
-    modal.innerHTML = `<div class="container__img__modal">
-                                <img src="${res.cultivos[0].image}" alt="">
-                      </div>
-                      <div class="descripcion_modal">
-                                <h3>${res.modulo}</h3>
-                                <h3>Familia: Tuberculos</h3>
-                                <h3>Cultivos: ${res.cultivos.map((c) => c.nombre).join("/")}</h3>
-                                <h3>Temperatura Actual: 20C</h3>
-                                <h3>Humedad Actual: 60%</h3>
-                                <h3>Descripcion: ${res.descripcion}</h3>
-                      </div>
-                      <div class="containerButtons">
-                                <button>Aceptar</button>
-                    </div>`;        
-      console.log(res.cultivos.map((c) => c.image))        
-      modal.style.display = "block";
-      modal.lastElementChild.firstElementChild.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-}
-
-function modalInfo2Culti(res,modal) {
-  console.log(res)
-  modal.innerHTML = `<div class="container__img__modal">
-                              <img src="${res.cultivos[0].image}" alt="">
-                              <img src="${res.cultivos[1].image}" alt="">
-                    </div>
-                    <div class="descripcion_modal">
-                              <h3>${res.modulo}</h3>
-                              <h3>Familia: Tuberculos</h3>
-                              <h3>Cultivos: ${res.cultivos.map((c) => c.nombre).join("/")}</h3>
-                              <h3>Temperatura Actual: 20C</h3>
-                              <h3>Humedad Actual: 60%</h3>
-                              <h3>Descripcion: ${res.descripcion}</h3>
-                    </div>
-                    <div class="containerButtons">
-                              <button>Aceptar</button>
-                  </div>`;        
-    console.log(res.cultivos.map((c) => c.image))        
-    modal.style.display = "block";
-    modal.lastElementChild.firstElementChild.addEventListener("click", () => {
+                          <button id="button__reservar">Reservar</button>
+                          <button id="button__cancelar">Cancelar</button>
+                    </div>`;
+  console.log(res.cultivos.map((c) => c.image))
+  modal.style.display = "block";
+  document.querySelector("#button__reservar").addEventListener("click", () => {
+    res.estado = "Pendiente de siembra";
+    localStorage.setItem("reservas__cultivos", JSON.stringify(reservas.map( r => r.modulo === res.modulo ? res : r)))  
+    location.reload()
+  });
+  document.querySelector("#button__cancelar").addEventListener("click", () => {
+    deleteReserva(res)
     modal.style.display = "none";
+  })
+}
+
+function modalSembrado(res,modal) {
+  modal.innerHTML = `
+                    <div class="descripcion_modal">
+
+                          <h2>${res.modulo}</h2>
+
+                          <span><b>Familia:</b> Tuberculos</span>
+
+                          <span><b>Cultivos:</b></span>
+                          ${res.cultivos.map(c => `
+                              <h4>${c.nombre}</h4>
+                              <div class="div__cultivo">
+                                  <img class="img__modal" src=${c.image}>
+                                  <p>${c.descripcion}</p>
+                              </div>
+                              `).join(' ')
+
+    }
+                          <span><b>Temperatura Actual:</b> 20C</span>
+                          <span><b>Humedad Actual:</b> 60%</span>
+                          <span>
+                              <b>Estado</b>: ${res.estado}
+                              </select>
+                          </span>
+                          <span> <b>Fecha siembra: </b>${res.fecha_siembra}</span>
+                    </div>`;
+  modal.innerHTML += `<button id="boton_cerrar">Aceptar</button>`
+  console.log(modal)
+  wizard.style.display = "block";
+  modal.style.display = "block";
+  document.querySelector("#boton_cerrar").addEventListener("click", ()=>{
+    wizard.style.display = "none";
+    modal.style.display = "none";
+  })
+}
+
+const cambioSembrado = (e) => {
+  const select = document.querySelector('#select_estado');
+  const fecha = document.querySelector('#campo_fecha_siembra');
+  const fecha_siembra = document.querySelector("#fecha_siembra");
+
+  if (select.value === 'Sembrado') {
+    console.log(fecha_siembra)
+    fecha_siembra.value = new Date().toISOString().split('T')[0]
+    fecha.classList.remove("campo_fecha_siembra")
+  } else {
+    fecha.classList.add("campo_fecha_siembra")
+  }
+}
+
+
+function modalPendienteSiembra(res, modal) {
+  console.log(res)
+  modal.innerHTML = `
+                    <div class="descripcion_modal">
+
+                          <h2>${res.modulo}</h2>
+
+                          <span><b>Familia:</b> Tuberculos</span>
+
+                          <span><b>Cultivos:</b></span>
+                          ${res.cultivos.map(c => `
+                              <h4>${c.nombre}</h4>
+                              <div class="div__cultivo">
+                                  <img class="img__modal" src=${c.image}>
+                                  <p>${c.descripcion}</p>
+                              </div>
+                              `).join(' ')
+
+    }
+                          <span><b>Temperatura Actual:</b> 20C</span>
+                          <span><b>Humedad Actual:</b> 60%</span>
+                          <span>
+                              <b>Estado</b>:
+                              <select id="select_estado" onchange=cambioSembrado()>
+                                  <option>Pendiente de siembra</option>
+                                  <option>Sembrado</option>
+                              </select>
+                          </span>
+                          <div id="campo_fecha_siembra" class="campo_fecha_siembra"><b>Fecha de siembra:</b> <input id="fecha_siembra" type="date" /></div>
+                    </div>`;
+  modal.innerHTML += `<button id="boton_cerrar">Aceptar</button>`
+  wizard.style.display = "block";
+  modal.style.display = "block";
+  
+  const botonCerrar = document.querySelector("#boton_cerrar")
+  botonCerrar.addEventListener("click", e => {
+    const select = document.querySelector('#select_estado')
+    const fecha_siembra = document.querySelector("#fecha_siembra").value;
+    res.estado = select.value;
+    res.fecha_siembra = fecha_siembra;
+    localStorage.setItem("reservas__cultivos", JSON.stringify(reservas.map( r => r.modulo === res.modulo ? res : r)))  
+    location.reload()
   });
 }
-
-
-
-
 

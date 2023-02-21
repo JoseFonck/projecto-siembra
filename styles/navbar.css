@@ -16,25 +16,22 @@
 
 .wizard {
   position: fixed;
-  /* display: none; */
   width: 100vw;
   height: 100vh;
-  /* background-color: rgba(136, 133, 133, 0.442); */
   z-index: 10;
   top: 0;
-  /* transition: all; */
-  /* transform: scale(0); */
+  background: #00000067;
+
 }
 
-.profile_container {
-  /* background-color: rgb(54, 133, 84); */
+.profile__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 25px;
 }
 
-.profile_container > img {
+.profile__container > img {
   background-color: antiquewhite;
   width: 60px;
   height: 60px;
@@ -44,7 +41,7 @@
 
 }
 
-.profile_container > a{
+.profile__container > a{
   background: transparent;
   color: rgb(0, 0, 0);
   text-decoration: none;  
@@ -64,12 +61,12 @@ li {
   font-size: inherit;
 }
 
-
+/* 
 .list{
   /* background-color: rgb(104, 245, 144); */
   /* margin: 30px; */
   /* border-bottom: 1px solid red; */
-}
+
 
 .item {
   padding: 12px 30px;
