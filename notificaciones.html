@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="styles/styles.css">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Notificaciones - Siembra</title>
-    </head>
-    <body>
-        <header>
-            <button class="back">
-                <i class="gg-arrow-left"></i>
-            </button>
-            <h1>Notificaciones</h1>
-            <button>
-                <img width="20px" src="assets/notificaciones.png" alt="" />
-            </button>
-        </header>
-
-
-
-    </body>
-    <script src="home.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/notificaciones.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notificaciones - Siembra</title>
+  </head>
+  <body>
+    <header>
+      <button class="back">
+        <i class="gg-arrow-left"></i>
+      </button>
+      <h1>Notificaciones</h1>
+      <button>
+        <img width="20px" src="assets/notificaciones.png" alt="" />
+      </button>
+    </header>
+    <!-- <h2>NOTIFICACIONES</h2> -->
+    <div class="notification__box">
+      <span>En 10 dias se libera la familia: Tuberculos. Reserva un modulo y, ¡a sembrar!</span>
+      <span><strong>Zanahoria:</strong> ¡Conocé todos los beneficios de consumirla!</span>
+      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+    </div>
+    <div class="notificacion">
+      <h3>
+        En 10 dias comenzará el período de siembra de la familia:
+        <strong> Tuberculos. </strong>
+        <br />
+        <br />¿Desea reservar un módulo?
+      </h3>
+      <div>
+        <button id="button__si">Si</button>
+        <button id="button__no">No</button>
+      </div>
+    </div>
+  </body>
+  <script src="home.js"></script>
+  <script src="notificaciones.js"></script>
 </html>

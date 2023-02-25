@@ -36,30 +36,7 @@ button_add.addEventListener("click", () => {
 
 // PARA NOTIFICACIONES
 
-                    // const notificacion = document.querySelector(".notificacion");
-                    // const button__si__reserva = document.querySelector("#button__si");
-                    // const button__no__reserva = document.querySelector("#button__no");
-
-                    // console.log(notificacion)
-                    // let ban = JSON.parse(localStorage.getItem("notificacion"));
-
-                    // if (!ban) {
-                    //   setTimeout(() => {
-                    //     notificacion.style.display = "block";
-                    //   }, 2000);
-                    //   localStorage.setItem("notificacion", true);
-                    // }
-
-// button__si__reserva.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   location.href = "/siembra.html";
-//   notificacion.style.display = "none";
-// });
-
-// button__no__reserva.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   notificacion.style.display = "none";
-// });
+                    
 
 modulos.forEach((mod) => {
   mod.addEventListener("click", (e) => {

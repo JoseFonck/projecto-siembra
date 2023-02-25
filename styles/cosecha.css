@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: #fff; */
+}
+
+.container__cosecha{
+    background-color: #fff;
+    height: 100vh;
+    margin-top: 60px;
+    /* overflow-y: none; */
+}
+
+
+.modulo__cosecha{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.campo_fecha_cosecha{
+    padding: 10px;
+    margin-top: 10px;
+}
+
+
+.container__botones{
+
+}

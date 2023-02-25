@@ -21,7 +21,7 @@
   z-index: 10;
   top: 0;
   background: #00000067;
-
+  display: none;
 }
 
 .profile__container {
